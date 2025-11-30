@@ -1,0 +1,31 @@
+package backTracking;
+import java.util.*;
+public class permutuaionLeetcode {
+    public void helper(int[] nums, List<Integer> ds,boolean[] isValid,List<List<Integer>> ans){
+        if(ds.size()==nums.length){
+            List<Integer> list=new ArrayList<>();
+            for(int i=0;i<ds.size();i++){
+                list.add(ds.get(i));
+            }
+            ans.add(list);
+            return;
+        }
+        for(int i=0; i<nums.length; i++){
+            if(isValid[i]==false){//call lgega
+                ds.add(nums[i]);
+                isValid[i]=true;
+                helper(nums,ds,isValid,ans);
+                //backtracking
+                isValid[i]=false;
+                ds.remove(ds.size()-1);
+            }
+        }
+    }
+    public List<List<Integer>> permute(int[] nums){
+        List<List<Integer>> ans=new ArrayList<>();
+        List<Integer> ds=new ArrayList<>();
+        boolean[] isValid=new boolean[nums.length];
+        helper(nums,ds,isValid,ans);
+        return ans;
+    }
+}
