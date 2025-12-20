@@ -77,7 +77,6 @@ public class zzzz {
         int pivot=arr[l];
         int i=l+1;
         int j=r;
-        int pivotIdx=-1;
         while(i<=j){
             while(i<=j  && pivot>arr[i]) i++;
             while( i<=j && pivot<arr[j]) j--;
