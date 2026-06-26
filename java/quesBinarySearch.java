@@ -1,4 +1,5 @@
 import java.io.FilterOutputStream;
+import java.util.*;
 
 public class quesBinarySearch {
     static int firstOcc(int[] a, int x){
@@ -49,6 +50,30 @@ public class quesBinarySearch {
             }else end=mid-1;
         }
         return ans;
+   }
+   public static boolean isPossible(int[] arr,int k, int dist){
+        int countCows=1;
+        int last=arr[0];
+        for(int i=1; i<arr.length; i++){
+            if(arr[i]-last>=dist){
+                countCows++;
+                last=arr[i];
+                if(countCows==k)return true;
+            }
+        }
+        return false;
+   }
+   public static int aggressiveCows(int[] stalls,int k){
+        int n=stalls.length;
+        Arrays.sort(stalls);
+        int st=1,end=stalls[n-1]-stalls[0];
+        while(st<=end){
+            int mid=st+(end-st)/2;
+            if(isPossible(stalls,k,mid)){
+                st=mid+1;
+            }else end=mid-1;
+        }
+        return end;
    }
     public static void main(String[] args) {
 //        int[] arr={1,5,5,5,6};

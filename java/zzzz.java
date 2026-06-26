@@ -101,11 +101,9 @@ public class zzzz {
     }
 
     public static void main(String[] args) {
-      int[] arr={5,4,3,2,1};
-     quick(arr,0,4);
-        for(int i=0; i<5; i++){
-            System.out.print(arr[i]+" ");
-        }
+     float a=0.7f;
+     if(a<0.7) System.out.println("hi");
+     else System.out.println("bye");
 
 
 
