@@ -25,8 +25,9 @@ public class implementationByArray {
                 return -1;
             }
             int top=arr[idx-1];
-            arr[idx]=0;
             idx--;
+            arr[idx]=0;
+
             return top;
         }
         void display(){
