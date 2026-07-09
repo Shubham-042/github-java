@@ -40,4 +40,29 @@ public class longestPalindromicSubstring {
         return solve(s,0,s.length()-1);
 
     }
+
+    //                    T.C O(N^2)
+    int st=0;
+    int maxLen=0;
+    private void expand(String s,int left,int right){
+        while(left>=0 && right<s.length() && s.charAt(left)==s.charAt(right)){
+            left--;
+            right++;
+        }
+        int len=right-left-1;
+        if(len>maxLen){
+            maxLen=len;
+            st=left+1;
+        }
+    }
+    public String longestPalindromeOptimise(String s) {
+        for(int i=0; i<s.length(); i++){
+            //for odd
+            expand(s,i,i);
+
+            //for even
+            expand(s,i,i+1);
+        }
+        return s.substring(st,st+maxLen);
+    }
 }
