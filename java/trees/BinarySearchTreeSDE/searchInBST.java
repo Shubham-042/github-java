@@ -1,4 +1,4 @@
-package trees.BinarySearchTree;
+package trees.BinarySearchTreeSDE;
 
 public class searchInBST {
     public class TreeNode {

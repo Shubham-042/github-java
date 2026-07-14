@@ -1,4 +1,4 @@
-package trees.BinarySearchTree;
+package trees.BinarySearchTreeSDE;
 import java.util.*;
 public class BSTiterator {
     class TreeNode{
