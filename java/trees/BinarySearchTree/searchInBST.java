@@ -1,0 +1,29 @@
+package trees.BinarySearchTree;
+
+public class searchInBST {
+    public class TreeNode {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode() {}
+     TreeNode(int val) { this.val = val; }
+     TreeNode(int val, TreeNode left, TreeNode right) {
+       this.val = val;
+          this.left = left;
+         this.right = right;
+     }
+  }
+    public TreeNode searchBST(TreeNode root, int val) {
+        while(root!=null){
+            if(root.val==val)return root;
+
+            if(val<root.val){
+                root=root.left;
+            }else{
+                root=root.right;
+            }
+        }
+        return null;
+
+    }
+}
