@@ -51,7 +51,7 @@ public class dijkstras {
                 dist[i]=Integer.MAX_VALUE;
             }
         }
-        pq.add(new Pair(0,0));
+        pq.add(new Pair(src,0));
         while(!pq.isEmpty()){
             Pair curr=pq.remove();
             if(!vis[curr.node]){
