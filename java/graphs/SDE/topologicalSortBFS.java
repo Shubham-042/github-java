@@ -15,7 +15,7 @@ public class topologicalSortBFS {
         }
         ArrayList<Integer> ans=new ArrayList<>();
         Queue<Integer> q=new LinkedList<>();
-        // calculate indegree
+        // calculate indegree of v
         int[] indeg=new int[V];
         for(int u=0; u<V; u++){
             for(int v:adj[u]){
