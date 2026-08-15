@@ -22,4 +22,26 @@ public class houseRobberII {
         int case2=amount(nums,1,n-1,dp2); //exclude first
         return Math.max(case1,case2);
     }
+
+
+
+    // space optimise
+    public int solveSpace(int[] nums,int st,int end){
+        int prev2=0;
+        int prev1=0;
+        for(int i=st; i<=end; i++){
+            int take=nums[i]+prev2;
+            int skip=prev1;
+
+            int curr=Math.max(take,skip);
+            prev2=prev1;
+            prev1=curr;
+        }
+        return prev1;
+    }
+    public int robSpace(int[] nums) {
+        int n=nums.length;
+        if(n==1)return nums[0];
+        return Math.max(solveSpace(nums,0,n-2),solveSpace(nums,1,n-1));
+    }
 }
