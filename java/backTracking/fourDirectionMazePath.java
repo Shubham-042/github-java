@@ -1,11 +1,14 @@
 package backTracking;
 
 public class fourDirectionMazePath {
+    static int count=0;
     public static void main(String[] args) {
         int rows=3;
         int cols=3;
+
         boolean[][] isVisited=new boolean[rows][cols]; //initially is filled with false in java
         print(0,0,rows-1,cols-1,"",isVisited);
+        System.out.println(count);
     }
     private static void print(int sr,int sc,int er, int ec,String s,boolean[][] isVisited){
         if(sr<0 || sc<0 || sr>er || sc>ec) return;
@@ -13,6 +16,7 @@ public class fourDirectionMazePath {
         if(isVisited[sr][sc]==true) return;
         if(sr==er && sc==ec){
             System.out.println(s);
+            count++;
             return;
         }
         isVisited[sr][sc]=true;

@@ -1,6 +1,7 @@
 package backTracking;
 
 public class ratInDeadMaze {
+    static int count=0;
     public static void main(String[] args) {
         int rows=3;
         int cols=3;
@@ -9,6 +10,8 @@ public class ratInDeadMaze {
                       {1,0,1}};
         boolean[][] isVisited=new boolean[rows][cols]; //initially is filled with false in java
         print(0,0,rows-1,cols-1,"",maze,isVisited);
+
+        System.out.println(count);
     }
     private static void print(int sr,int sc,int er, int ec,String s,int[][] maze, boolean[][] isVisited){
         if(sr<0 || sc<0) return;
@@ -16,6 +19,7 @@ public class ratInDeadMaze {
 
         if(sr==er && sc==ec){
             System.out.println(s);
+            count++;
             return;
         }
         if(maze[sr][sc]==0) return;
@@ -30,6 +34,8 @@ public class ratInDeadMaze {
         //go up
         print(sr-1,sc,er,ec,s+"U",maze,isVisited);
         //backtracking
+
         isVisited[sr][sc]=false;
+
     }
 }
