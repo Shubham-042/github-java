@@ -25,7 +25,7 @@ public class binaryArrayWithSum {
     }
 
 
-    //         time O(1)   space O(n)
+    //         time O(n)   space O(n)
     public int numSubarraysWithSum(int[] nums, int goal) {
         int n=nums.length;
         int count=0;

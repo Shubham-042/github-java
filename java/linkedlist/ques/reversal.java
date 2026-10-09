@@ -1,6 +1,6 @@
 package linkedlist.ques;
 
-public class reversal {
+public class  reversal {
     public static class  Node{
         int val;
         Node next;

@@ -29,5 +29,6 @@ public class stringToInt {
             i++;
         }
         return sign*num;
+
     }
 }
